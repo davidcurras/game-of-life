@@ -12,3 +12,6 @@ This is a React implementation of [John Conway's](https://en.wikipedia.org/wiki/
 
 ## Check code style rules
 <code>npm run lint</code>
+
+## TODO
+Improve performance by changing only the modified cells and not the entire board
