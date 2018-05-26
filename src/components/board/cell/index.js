@@ -1,6 +1,18 @@
+// @flow
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { toggleCell } from '../../../modules/game'
 import Cell from './view'
 
-const mapStateToProps = state => ({ test: state })
+type State = {}
+type Dispath = { toggleCell: Function }
 
-export default connect(mapStateToProps)(Cell)
+const mapStateToProps = () => ({})
+
+const mapDispatchToProps = dispatch => ({
+  toggleCell: bindActionCreators(toggleCell, dispatch),
+})
+
+export type ReduxProps = State & Dispath
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cell)

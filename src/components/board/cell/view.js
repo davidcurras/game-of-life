@@ -1,11 +1,24 @@
-import React from 'react'
+// @flow
+import React, { Component } from 'react'
+import type { ReduxProps } from './'
 
-type Props = { value: string }
+type Props = { value: string, x: number, y: number } & ReduxProps
 
-const CellComponent = (props: Props) => {
+class CellComponent extends Component<Props> {
 
-  const background = props.value ? 'blackCell' : 'whiteCell'
-  return <div className={`cell ${background}`} />
+  clickHandler = () => {
+
+    const { toggleCell, x, y } = this.props
+    toggleCell(x, y)
+
+  }
+
+  render() {
+
+    const background = this.props.value ? 'black' : 'white'
+    return <button className={`not-a-button cell ${background}`} onClick={this.clickHandler} />
+
+  }
 
 }
 
