@@ -9,3 +9,6 @@ This is a React implementation of [John Conway's](https://en.wikipedia.org/wiki/
 ## Run
 <code>yarn</code>
 <code>npm start</code>
+
+## Check code style rules
+<code>npm run lint</code>

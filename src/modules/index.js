@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import cells from './cells'
+import game from './game'
 
 export default combineReducers({
   router: routerReducer,
-  cells,
+  game,
 })

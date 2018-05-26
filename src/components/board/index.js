@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import Header from './view'
 
-const mapStateToProps = () => {}
+const mapStateToProps = state => ({
+  board: state.game.board,
+})
 
-const mapDispatchToProps = () => {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps)(Header)

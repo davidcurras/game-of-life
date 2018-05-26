@@ -15,6 +15,7 @@
       2, { "ignorePureComponents": true }
     ],
     "react/forbid-prop-types": [0, { "forbid": [] }],
+    "react/no-array-index-key": [0, "never"],
     "import/extensions": [1, "never", { "svg": "always" }],
     "import/no-extraneous-dependencies": [
       "error",
@@ -24,7 +25,9 @@
         "peerDependencies": false
       }
     ],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "no-underscore-dangle": [0, "never"],
+    "padded-blocks": ["error", "always"]
   },
   "env": {
     "jest": true
