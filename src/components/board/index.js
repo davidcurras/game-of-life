@@ -1,17 +1,21 @@
 // @flow
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { nextStep } from '../../modules/game'
+import { nextStep, togglePlay } from '../../modules/game'
 import type { GameState } from '../../modules/game'
 import Header from './view'
 
-type State = { board: GameState }
-type Dispath = { nextStep: Function }
+type State = { board: GameState, isPlaying: Boolean }
+type Dispath = { nextStep: Function, togglePlay: Function }
 
-const mapStateToProps = state => ({ board: state.game.board })
+const mapStateToProps = state => ({
+  board: state.game.board,
+  isPlaying: state.game.isPlaying,
+})
 
 const mapDispatchToProps = dispatch => ({
   nextStep: bindActionCreators(nextStep, dispatch),
+  togglePlay: bindActionCreators(togglePlay, dispatch),
 })
 
 export type ReduxProps = State & Dispath

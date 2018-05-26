@@ -5,16 +5,20 @@ import getNextBoard from '../helpers/game-of-life'
 type Row = Array<number>
 type GameState = { board: Array<Row> }
 
-export const CHANGE_CELL_STATUS = 'game-of-life/CHANGE_CELL_STATUS'
+export const TOGGLE_CELL = 'game-of-life/TOGGLE_CELL'
 export const NEXT_STEP = 'game-of-life/NEXT_STEP'
+export const TOGGLE_PLAY = 'game-of-life/TOGGLE_PLAY'
 
-const initialState: GameState = { board: generateEmptyBoard() }
+const initialState: GameState = {
+  board: generateEmptyBoard(),
+  isPlaying: false,
+}
 
 export default (state: GameState = initialState, action: number) => {
 
   switch (action.type) {
 
-    case CHANGE_CELL_STATUS:
+    case TOGGLE_CELL:
       return {
         ...state,
         board: toggleInBoard(action.x, action.y, state.board),
@@ -26,6 +30,12 @@ export default (state: GameState = initialState, action: number) => {
         board: getNextBoard(state.board),
       }
 
+    case TOGGLE_PLAY:
+      return {
+        ...state,
+        isPlaying: !state.isPlaying,
+      }
+
     default:
       return state
 
@@ -33,6 +43,8 @@ export default (state: GameState = initialState, action: number) => {
 
 }
 
-export const toggleCell = (x, y) => ({ type: CHANGE_CELL_STATUS, x, y })
+export const toggleCell = (x, y) => ({ type: TOGGLE_CELL, x, y })
 
 export const nextStep = () => ({ type: NEXT_STEP })
+
+export const togglePlay = () => ({ type: TOGGLE_PLAY })
