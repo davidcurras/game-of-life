@@ -14,7 +14,7 @@ This is a React implementation of [John Conway's](https://en.wikipedia.org/wiki/
 <code>npm run lint</code>
 
 ## Play
-Play the game hosted on [Github Pages](https://davidcurras.github.io/game-of-life)
+Play the game hosted on [Github Pages](https://davidcurras.github.io/game-of-life-web)
 
 ## TODO
 Improve performance by changing only the modified cells and not the entire board
